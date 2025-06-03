@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portafolio de Ernesto Rodríguez, desarrollador web Full Stack con enfoque en diseño y experiencia de usuario." />
+  <title>Ernesto Rodríguez | Desarrollador Web</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Fondo degradado animado personalizado -->
+  <style>
+    body {
+      background: linear-gradient(-45deg, #0a0a23, #1a1a40, #2b2b5e, #1c1c38);
+      background-size: 300% 300%;
+      animation: gradientFlow 15s ease-in-out infinite;
+    }
+
+    @keyframes gradientFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    ::selection {
+      background: #6366f1;
+      color: white;
+    }
+  </style>
+</head>
+
+<body class="text-white font-sans">
+
+  <main class="flex flex-col items-center justify-center min-h-screen px-6 space-y-20">
+
+    <!-- Hero -->
+    <section class="text-center mt-20 animate__animated animate__fadeIn">
+      <h1 class="text-5xl font-bold mb-4 group transition-all duration-500 hover:scale-105">
+        <span class="text-white transition duration-500 group-hover:text-purple-200">Ernesto</span>
+        <span class="bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600 bg-clip-text text-transparent transition-all duration-500 group-hover:from-purple-300 group-hover:via-purple-400 group-hover:to-purple-500">
+          Rodríguez
+        </span>
+      </h1>
+      <p class="text-lg text-gray-200 mb-6">Desarrollador Web Full Stack</p>
+      <p class="max-w-2xl text-gray-300 text-md leading-relaxed mx-auto">
+        Apasionado por el aprendizaje continuo y el diseño funcional. Disfruto crear experiencias web únicas, combinar frontend con backend y colaborar en equipos dinámicos. Actualmente, busco mi primera oportunidad como desarrollador web para seguir creciendo y aportando valor.
+      </p>
+    </section>
+
+    <!-- Links -->
+    <section class="flex flex-col items-center space-y-4 animate__animated animate__fadeInUp">
+      <a href="https://drive.google.com/file/d/1ZDfrzoUIDGwlVuDErw2WJ3XnMjDQAWUL/view?usp=sharing"
+         target="_blank"
+         class="px-6 py-3 bg-purple-600 hover:bg-purple-700 transition rounded-full font-semibold shadow-lg">
+        Descargar CV
+      </a>
+
+      <div class="flex gap-6 text-gray-200 text-xl">
+        <a href="https://www.linkedin.com/in/ernesto-rodriguez-rodriguez/" target="_blank" class="hover:text-purple-400 transition">
+          <i data-lucide="linkedin" class="w-6 h-6"></i>
+        </a>
+        <a href="https://github.com/ernestoorod" target="_blank" class="hover:text-purple-400 transition">
+          <i data-lucide="github" class="w-6 h-6"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- Placeholder future -->
+    <section class="text-center text-gray-400 text-sm mt-24 animate__animated animate__fadeIn delay-1s">
+      <p>Próximamente: proyectos, tecnologías, experiencia laboral, formación y habilidades</p>
+    </section>
+
+  </main>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
