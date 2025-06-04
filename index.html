@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portafolio de Ernesto Rodríguez, desarrollador web Full Stack con enfoque en diseño y experiencia de usuario." />
-  <title>Ernesto Rodríguez | Desarrollador Web</title>
+  <title>Ernesto Rodríguez</title>
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -15,18 +14,46 @@
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
-  <!-- Fondo degradado animado personalizado -->
   <style>
     body {
-      background: linear-gradient(-45deg, #0a0a23, #1a1a40, #2b2b5e, #1c1c38);
-      background-size: 300% 300%;
-      animation: gradientFlow 15s ease-in-out infinite;
+      background: linear-gradient(-45deg,
+        #1c1c38,
+        #2b2b5e,
+        #1f1f3f,
+        #26264d,
+        #1c1c38);
+      background-size: 600% 600%;
+      animation: backgroundShift 40s ease-in-out infinite;
     }
 
-    @keyframes gradientFlow {
+    @keyframes backgroundShift {
       0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+      25% { background-position: 25% 50%; }
+      50% { background-position: 50% 50%; }
+      75% { background-position: 75% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+    @keyframes gradientDynamic {
+      0% {
+        background-position: var(--xStart, 0%) var(--yStart, 50%);
+      }
+      100% {
+        background-position: var(--xEnd, 100%) var(--yEnd, 50%);
+      }
+    }
+
+    .animate-gradient {
+      background-image: linear-gradient(to right, white, #d1d5db, #a78bfa, #c084fc, white);
+      background-size: 300% 300%;
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      animation: gradientDynamic var(--speed, 12s) ease-in-out infinite alternate;
+    }
+
+    html {
+      scroll-behavior: auto;
     }
 
     ::selection {
@@ -35,52 +62,141 @@
     }
   </style>
 </head>
+<body class="text-white font-sans antialiased">
 
-<body class="text-white font-sans">
+  <!-- NAVBAR -->
+  <nav class="w-full py-6 flex justify-center animate__animated animate__fadeInDown animate__faster sticky top-0 z-50 bg-gradient-to-b from-[#0a0a23]/90 to-transparent backdrop-blur">
+    <ul id="navbar" class="flex gap-8 text-sm sm:text-base md:text-lg font-medium text-gray-300">
+      <li><a href="#inicio" class="nav-link transition">Inicio</a></li>
+      <li><a href="#sobremi" class="nav-link transition">Sobre mí</a></li>
+      <li><a href="#experiencia" class="nav-link transition">Experiencia</a></li>
+      <li><a href="#proyectos" class="nav-link transition">Proyectos</a></li>
+    </ul>
+  </nav>
 
-  <main class="flex flex-col items-center justify-center min-h-screen px-6 space-y-20">
+  <!-- MAIN HERO -->
+  <main id="inicio" class="flex flex-col items-center justify-center px-6 min-h-screen text-center space-y-8">
+    <h1 id="nombre" class="text-[3rem] sm:text-[4rem] md:text-[5rem] font-extrabold leading-tight animate-gradient">
+      Ernesto Rodríguez
+    </h1>
 
-    <!-- Hero -->
-    <section class="text-center mt-20 animate__animated animate__fadeIn">
-      <h1 class="text-5xl font-bold mb-4 group transition-all duration-500 hover:scale-105">
-        <span class="text-white transition duration-500 group-hover:text-purple-200">Ernesto</span>
-        <span class="bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600 bg-clip-text text-transparent transition-all duration-500 group-hover:from-purple-300 group-hover:via-purple-400 group-hover:to-purple-500">
-          Rodríguez
-        </span>
-      </h1>
-      <p class="text-lg text-gray-200 mb-6">Desarrollador Web Full Stack</p>
-      <p class="max-w-2xl text-gray-300 text-md leading-relaxed mx-auto">
-        Apasionado por el aprendizaje continuo y el diseño funcional. Disfruto crear experiencias web únicas, combinar frontend con backend y colaborar en equipos dinámicos. Actualmente, busco mi primera oportunidad como desarrollador web para seguir creciendo y aportando valor.
-      </p>
-    </section>
+    <p class="text-lg sm:text-xl md:text-2xl text-purple-400 font-medium animate__animated animate__fadeInUp animate__delay-1s">
+      Desarrollador Web Full Stack
+    </p>
 
-    <!-- Links -->
-    <section class="flex flex-col items-center space-y-4 animate__animated animate__fadeInUp">
-      <a href="https://drive.google.com/file/d/1ZDfrzoUIDGwlVuDErw2WJ3XnMjDQAWUL/view?usp=sharing"
-         target="_blank"
-         class="px-6 py-3 bg-purple-600 hover:bg-purple-700 transition rounded-full font-semibold shadow-lg">
-        Descargar CV
+    <p class="text-sm sm:text-base md:text-lg text-gray-300 max-w-xl leading-relaxed animate__animated animate__fadeInUp animate__delay-2s">
+      Dedicado a crear experiencias digitales atractivas, funcionales y accesibles.
+    </p>
+
+    <div class="flex justify-center gap-4 mt-2 animate__animated animate__fadeInUp animate__delay-3s">
+      <a href="https://github.com/ernestoorod" target="_blank" class="bg-white/10 hover:bg-purple-700 p-3 rounded-md transition">
+        <i data-lucide="github" class="w-5 h-5 text-white"></i>
       </a>
-
-      <div class="flex gap-6 text-gray-200 text-xl">
-        <a href="https://www.linkedin.com/in/ernesto-rodriguez-rodriguez/" target="_blank" class="hover:text-purple-400 transition">
-          <i data-lucide="linkedin" class="w-6 h-6"></i>
-        </a>
-        <a href="https://github.com/ernestoorod" target="_blank" class="hover:text-purple-400 transition">
-          <i data-lucide="github" class="w-6 h-6"></i>
-        </a>
-      </div>
-    </section>
-
-    <!-- Placeholder future -->
-    <section class="text-center text-gray-400 text-sm mt-24 animate__animated animate__fadeIn delay-1s">
-      <p>Próximamente: proyectos, tecnologías, experiencia laboral, formación y habilidades</p>
-    </section>
-
+      <a href="https://www.linkedin.com/in/ernesto-rodriguez-rodriguez/" target="_blank" class="bg-white/10 hover:bg-purple-700 p-3 rounded-md transition">
+        <i data-lucide="linkedin" class="w-5 h-5 text-white"></i>
+      </a>
+    </div>
   </main>
 
+  <!-- SECCIÓN: SOBRE MÍ -->
+  <section id="sobremi" class="min-h-screen flex items-center justify-center px-6 py-16 text-center">
+    <div class="max-w-2xl">
+      <h2 class="text-3xl font-bold mb-4 text-purple-400">Sobre mí</h2>
+      <p class="text-gray-300 text-lg leading-relaxed">Soy un apasionado desarrollador con experiencia en crear soluciones web modernas y accesibles. Me encanta aprender nuevas tecnologías y colaborar en proyectos desafiantes que generen impacto.</p>
+    </div>
+  </section>
+
+  <!-- SECCIÓN: EXPERIENCIA -->
+  <section id="experiencia" class="min-h-screen flex items-center justify-center px-6 py-16 text-center">
+    <div class="max-w-2xl">
+      <h2 class="text-3xl font-bold mb-4 text-purple-400">Experiencia</h2>
+      <p class="text-gray-300 text-lg leading-relaxed">He trabajado en múltiples proyectos usando tecnologías como JavaScript, React, Node.js, Tailwind, y bases de datos SQL/NoSQL. También tengo experiencia con herramientas de control de versiones y metodologías ágiles.</p>
+    </div>
+  </section>
+
+  <!-- SECCIÓN: PROYECTOS -->
+  <section id="proyectos" class="min-h-screen flex items-center justify-center px-6 py-16 text-center">
+    <div class="max-w-2xl">
+      <h2 class="text-3xl font-bold mb-4 text-purple-400">Proyectos</h2>
+      <p class="text-gray-300 text-lg leading-relaxed">Aquí puedes ver una muestra de mis proyectos personales y profesionales, desde aplicaciones web interactivas hasta herramientas internas para empresas. Me enfoco en rendimiento, accesibilidad y buen diseño.</p>
+    </div>
+  </section>
+
+  <!-- SCRIPTS -->
   <script>
     lucide.createIcons();
+
+    // Scroll acelerado y frenado
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const target = document.getElementById(targetId);
+
+        if (target) {
+          const start = window.scrollY;
+          const end = target.offsetTop;
+          const distance = end - start;
+          const duration = 1500;
+          let startTime = null;
+
+          function easeOutQuart(t) {
+            return 1 - (--t) * t * t * t;
+          }
+
+          function scrollStep(timestamp) {
+            if (!startTime) startTime = timestamp;
+            const time = timestamp - startTime;
+            const percent = Math.min(time / duration, 1);
+            const eased = easeOutQuart(percent);
+
+            window.scrollTo(0, start + distance * eased);
+
+            if (percent < 1) {
+              requestAnimationFrame(scrollStep);
+            }
+          }
+
+          requestAnimationFrame(scrollStep);
+        }
+      });
+    });
+
+    // Activar secciones y animaciones ¡PUM!
+    const sections = document.querySelectorAll("section, main[id]");
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          const id = entry.target.getAttribute("id");
+          const link = document.querySelector(`.nav-link[href="#${id}"]`);
+
+          if (entry.isIntersecting) {
+            navLinks.forEach(l => l.classList.remove("text-purple-400"));
+            if (link) link.classList.add("text-purple-400");
+
+            const content = entry.target.querySelector("div");
+            if (content && !content.classList.contains("animate__animated")) {
+              content.classList.add("animate__animated", "animate__zoomIn");
+            }
+          }
+        });
+      },
+      { threshold: 0.6 }
+    );
+
+    sections.forEach(section => observer.observe(section));
+
+    // Movimiento aleatorio del degradado del nombre
+    const nombre = document.getElementById("nombre");
+    const rand = (min, max) => `${Math.floor(Math.random() * (max - min + 1)) + min}%`;
+
+    nombre.style.setProperty("--xStart", rand(0, 30));
+    nombre.style.setProperty("--yStart", rand(0, 100));
+    nombre.style.setProperty("--xEnd", rand(70, 100));
+    nombre.style.setProperty("--yEnd", rand(0, 100));
+    nombre.style.setProperty("--speed", `${Math.floor(Math.random() * 10) + 10}s`);
   </script>
 </body>
 </html>
