@@ -98,13 +98,94 @@
     </div>
   </main>
 
+  <!-- LÍNEA SEPARADORA -->
+  <div class="w-full flex justify-center my-8">
+    <div class="h-[1px] w-[80%] bg-gradient-to-r from-transparent via-purple-500 to-transparent"></div>
+  </div>
+
   <!-- SECCIÓN: SOBRE MÍ -->
-  <section id="sobremi" class="min-h-screen flex items-center justify-center px-6 py-16 text-center">
-    <div class="max-w-2xl">
-      <h2 class="text-3xl font-bold mb-4 text-purple-400">Sobre mí</h2>
-      <p class="text-gray-300 text-lg leading-relaxed">Soy un apasionado desarrollador con experiencia en crear soluciones web modernas y accesibles. Me encanta aprender nuevas tecnologías y colaborar en proyectos desafiantes que generen impacto.</p>
+  <section id="sobremi" class="min-h-screen flex items-center justify-start px-6 py-16">
+    <div class="w-full max-w-6xl mx-auto flex flex-col items-center text-center md:items-start md:text-left">
+
+      <!-- TÍTULO DE SECCIÓN -->
+      <h2 class="text-4xl sm:text-5xl font-extrabold text-purple-400 mb-10 w-full">
+        Sobre mí
+      </h2>
+
+      <!-- CONTENIDO PRINCIPAL -->
+      <div class="flex flex-col md:flex-row items-center md:items-start gap-10 w-full">
+
+        <!-- FOTO -->
+        <div class="flex justify-center md:justify-start">
+          <img src="/assets/foto.png" alt="Foto de Ernesto Rodríguez"
+            class="w-40 h-40 sm:w-48 sm:h-48 md:w-52 md:h-52 rounded-full object-cover shadow-xl border-4 border-purple-500">
+        </div>
+
+        <!-- TEXTO -->
+        <div class="md:max-w-xl">
+          <h3 class="text-2xl font-semibold text-purple-400 mb-4">¿Quién soy?</h3>
+          <p class="text-gray-300 text-lg leading-relaxed">
+            Soy un <span class="text-purple-400 font-semibold">desarrollador full stack</span> con enfoque en el
+            <span class="text-purple-400 font-semibold">frontend</span>, apasionado por el
+            <span class="text-purple-400 font-semibold">aprendizaje constante</span> y la
+            <span class="text-purple-400 font-semibold">creación de experiencias web funcionales y creativas</span>. Me destaco por mi
+            <span class="text-purple-400 font-semibold">compromiso</span>, <span class="text-purple-400 font-semibold">adaptabilidad</span> y gusto por el
+            <span class="text-purple-400 font-semibold">trabajo en equipo</span>. Actualmente, busco mi
+            <span class="text-purple-400 font-semibold">primera oportunidad profesional</span> en el sector tecnológico.
+          </p>
+        </div>
+      </div>
+
+      <!-- HABILIDADES -->
+      <div class="w-full mt-10">
+        <h3 class="text-2xl font-bold text-purple-400 mb-4 text-center md:text-left">Habilidades</h3>
+
+        <div class="relative">
+          <div id="habilidades" class="flex flex-wrap justify-center md:justify-start gap-4 text-base font-medium">
+
+            <!-- Habilidades visibles siempre -->
+            <span class="flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-500/20 text-yellow-300"><i data-lucide="code" class="w-4 h-4"></i> JavaScript</span>
+            <span class="flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/20 text-red-400"><i data-lucide="flame" class="w-4 h-4"></i> Java</span>
+            <span class="flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/20 text-green-300"><i data-lucide="leaf" class="w-4 h-4"></i> Spring</span>
+            <span class="flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/20 text-green-300"><i data-lucide="zap" class="w-4 h-4"></i> Spring Boot</span>
+            <span class="flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/20 text-indigo-300"><i data-lucide="braces" class="w-4 h-4"></i> PHP</span>
+            <span class="flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/20 text-cyan-300"><i data-lucide="atom" class="w-4 h-4"></i> React</span>
+
+            <!-- Habilidades ocultas solo en móvil -->
+            <span class="hidden md:inline-flex extra-skill items-center gap-2 px-4 py-2 rounded-full bg-sky-500/20 text-sky-300"><i data-lucide="wind" class="w-4 h-4"></i> Tailwind</span>
+            <span class="hidden md:inline-flex extra-skill items-center gap-2 px-4 py-2 rounded-full bg-purple-500/20 text-purple-300"><i data-lucide="layout-template" class="w-4 h-4"></i> Bootstrap</span>
+            <span class="hidden md:inline-flex extra-skill items-center gap-2 px-4 py-2 rounded-full bg-orange-500/20 text-orange-300"><i data-lucide="file-text" class="w-4 h-4"></i> HTML</span>
+            <span class="hidden md:inline-flex extra-skill items-center gap-2 px-4 py-2 rounded-full bg-blue-500/20 text-blue-300"><i data-lucide="layers" class="w-4 h-4"></i> CSS</span>
+            <span class="hidden md:inline-flex extra-skill items-center gap-2 px-4 py-2 rounded-full bg-orange-400/20 text-orange-200"><i data-lucide="git-branch" class="w-4 h-4"></i> Git</span>
+            <span class="hidden md:inline-flex extra-skill items-center gap-2 px-4 py-2 rounded-full bg-zinc-400/20 text-zinc-200"><i data-lucide="github" class="w-4 h-4"></i> GitHub</span>
+            <span class="hidden md:inline-flex extra-skill items-center gap-2 px-4 py-2 rounded-full bg-blue-400/20 text-blue-200"><i data-lucide="database" class="w-4 h-4"></i> MySQL</span>
+            <span class="hidden md:inline-flex extra-skill items-center gap-2 px-4 py-2 rounded-full bg-gray-400/20 text-gray-300"><i data-lucide="fish" class="w-4 h-4"></i> Docker</span>
+            <span class="hidden md:inline-flex extra-skill items-center gap-2 px-4 py-2 rounded-full bg-pink-400/20 text-pink-200"><i data-lucide="figma" class="w-4 h-4"></i> Figma</span>
+            <span class="hidden md:inline-flex extra-skill items-center gap-2 px-4 py-2 rounded-full bg-lime-500/20 text-lime-300"><i data-lucide="send" class="w-4 h-4"></i> REST</span>
+            <span class="hidden md:inline-flex extra-skill items-center gap-2 px-4 py-2 rounded-full bg-amber-400/20 text-amber-300"><i data-lucide="activity" class="w-4 h-4"></i> Postman</span>
+            <span class="hidden md:inline-flex extra-skill items-center gap-2 px-4 py-2 rounded-full bg-fuchsia-500/20 text-fuchsia-300"><i data-lucide="flashlight" class="w-4 h-4"></i> Vite</span>
+          </div>
+
+          <!-- Botón mostrar más/menos -->
+          <div class="md:hidden mt-6 flex justify-center w-full">
+            <button onclick="toggleSkills()" class="flex flex-col items-center text-sm text-white hover:text-purple-400 transition-all" id="toggleButton">
+              <span id="toggleText">Conocer más</span>
+              <svg id="arrowIcon" class="w-5 h-5 mt-1 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg"
+                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
+
+  <!-- LÍNEA SEPARADORA -->
+  <div class="w-full flex justify-center my-8">
+    <div class="h-[1px] w-[80%] bg-gradient-to-r from-transparent via-purple-500 to-transparent"></div>
+  </div>
 
   <!-- SECCIÓN: EXPERIENCIA -->
   <section id="experiencia" class="min-h-screen flex items-center justify-center px-6 py-16 text-center">
@@ -113,6 +194,11 @@
       <p class="text-gray-300 text-lg leading-relaxed">He trabajado en múltiples proyectos usando tecnologías como JavaScript, React, Node.js, Tailwind, y bases de datos SQL/NoSQL. También tengo experiencia con herramientas de control de versiones y metodologías ágiles.</p>
     </div>
   </section>
+
+  <!-- LÍNEA SEPARADORA -->
+  <div class="w-full flex justify-center my-8">
+    <div class="h-[1px] w-[80%] bg-gradient-to-r from-transparent via-purple-500 to-transparent"></div>
+  </div>
 
   <!-- SECCIÓN: PROYECTOS -->
   <section id="proyectos" class="min-h-screen flex items-center justify-center px-6 py-16 text-center">
@@ -162,32 +248,6 @@
       });
     });
 
-    // Activar secciones y animaciones ¡PUM!
-    const sections = document.querySelectorAll("section, main[id]");
-    const navLinks = document.querySelectorAll(".nav-link");
-
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          const id = entry.target.getAttribute("id");
-          const link = document.querySelector(`.nav-link[href="#${id}"]`);
-
-          if (entry.isIntersecting) {
-            navLinks.forEach(l => l.classList.remove("text-purple-400"));
-            if (link) link.classList.add("text-purple-400");
-
-            const content = entry.target.querySelector("div");
-            if (content && !content.classList.contains("animate__animated")) {
-              content.classList.add("animate__animated", "animate__zoomIn");
-            }
-          }
-        });
-      },
-      { threshold: 0.6 }
-    );
-
-    sections.forEach(section => observer.observe(section));
-
     // Movimiento aleatorio del degradado del nombre
     const nombre = document.getElementById("nombre");
     const rand = (min, max) => `${Math.floor(Math.random() * (max - min + 1)) + min}%`;
@@ -197,6 +257,28 @@
     nombre.style.setProperty("--xEnd", rand(70, 100));
     nombre.style.setProperty("--yEnd", rand(0, 100));
     nombre.style.setProperty("--speed", `${Math.floor(Math.random() * 10) + 10}s`);
+
+
+    function toggleSkills() {
+      const extras = document.querySelectorAll('.extra-skill');
+      const arrow = document.getElementById("arrowIcon");
+      const text = document.getElementById("toggleText");
+
+      const isHidden = extras[0].classList.contains("hidden");
+
+      extras.forEach(el => {
+        if (isHidden) {
+          el.classList.remove("hidden");
+          el.classList.add("inline-flex");
+        } else {
+          el.classList.add("hidden");
+          el.classList.remove("inline-flex");
+        }
+      });
+
+      arrow.classList.toggle("rotate-180");
+      text.textContent = isHidden ? "Conocer menos" : "Conocer más";
+    }
   </script>
 </body>
 </html>
