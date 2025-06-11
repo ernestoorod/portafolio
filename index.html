@@ -14,42 +14,36 @@
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
+  <!-- TypeIt-->
+  <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
   <style>
     body {
-      background: linear-gradient(-45deg,
-        #1c1c38,
-        #2b2b5e,
-        #1f1f3f,
-        #26264d,
-        #1c1c38);
-      background-size: 600% 600%;
-      animation: backgroundShift 40s ease-in-out infinite;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background:
+        radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 0) 0 0 / 20px 20px repeat,
+        linear-gradient(180deg, #1a103d 0%, #030612 100%);
+      background-attachment: fixed;
+      color: white;
+      font-family: sans-serif;
+      animation: moveDots 40s linear infinite;
     }
 
-    @keyframes backgroundShift {
-      0% { background-position: 0% 50%; }
-      25% { background-position: 25% 50%; }
-      50% { background-position: 50% 50%; }
-      75% { background-position: 75% 50%; }
-      100% { background-position: 100% 50%; }
-    }
-
-    @keyframes gradientDynamic {
+    @keyframes moveDots {
       0% {
-        background-position: var(--xStart, 0%) var(--yStart, 50%);
+        background-position: 0 0, 0 0;
       }
       100% {
-        background-position: var(--xEnd, 100%) var(--yEnd, 50%);
+        background-position: 100px 100px, 0 0;
       }
-    }
-
-    .animate-gradient {
-      background-image: linear-gradient(to right, white, #d1d5db, #a78bfa, #c084fc, white);
-      background-size: 300% 300%;
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-      animation: gradientDynamic var(--speed, 12s) ease-in-out infinite alternate;
     }
 
     html {
@@ -61,11 +55,12 @@
       color: white;
     }
   </style>
+
 </head>
 <body class="text-white font-sans antialiased">
 
   <!-- NAVBAR -->
-  <nav class="w-full py-6 flex justify-center animate__animated animate__fadeInDown animate__faster sticky top-0 z-50 bg-gradient-to-b from-[#0a0a23]/90 to-transparent backdrop-blur">
+  <nav class="fixed top-0 left-0 w-full py-6 flex justify-center z-[9999] bg-gradient-to-b from-[#0a0a23]/90 to-transparent backdrop-blur animate__animated animate__fadeInDown animate__faster">
     <ul id="navbar" class="flex gap-8 text-sm sm:text-base md:text-lg font-medium text-gray-300">
       <li><a href="#inicio" class="nav-link transition">Inicio</a></li>
       <li><a href="#sobremi" class="nav-link transition">Sobre mí</a></li>
@@ -84,9 +79,8 @@
       Desarrollador Web Full Stack
     </p>
 
-    <p class="text-sm sm:text-base md:text-lg text-gray-300 max-w-xl leading-relaxed animate__animated animate__fadeInUp animate__delay-2s">
-      Dedicado a crear experiencias digitales atractivas, funcionales y accesibles.
-    </p>
+    <p id="typing-text" class="text-sm sm:text-base md:text-lg text-gray-300 font-semibold max-w-xl leading-relaxed animate__animated animate__fadeInUp animate__delay-2s"></p>
+
 
     <div class="flex justify-center gap-4 mt-2 animate__animated animate__fadeInUp animate__delay-3s">
       <a href="https://github.com/ernestoorod" target="_blank" class="bg-white/10 hover:bg-purple-700 p-3 rounded-md transition">
@@ -191,13 +185,111 @@
     <div class="h-[1px] w-[80%] bg-gradient-to-r from-transparent via-purple-500 to-transparent"></div>
   </div>
 
-  <!-- SECCIÓN: EXPERIENCIA -->
-  <section id="experiencia" class="min-h-screen flex items-center justify-center px-6 py-16 text-center">
-    <div class="max-w-2xl">
-      <h2 class="text-3xl font-bold mb-4 text-purple-400">Experiencia</h2>
-      <p class="text-gray-300 text-lg leading-relaxed">He trabajado en múltiples proyectos usando tecnologías como JavaScript, React, Node.js, Tailwind, y bases de datos SQL/NoSQL. También tengo experiencia con herramientas de control de versiones y metodologías ágiles.</p>
+<section id="experiencia" class=" py-20 px-4">
+  <h2 class="text-4xl font-bold text-center text-purple-400 mb-16">Formación y Experiencia</h2>
+
+  <div class="relative max-w-6xl mx-auto">
+    <!-- Línea vertical central en escritorio / izquierda en móvil -->
+    <div class="absolute left-1/2 md:left-1/2 top-0 h-full w-[3px] bg-purple-600 transform md:-translate-x-1/2 sm:translate-x-0 sm:left-5"></div>
+
+    <div class="flex flex-col gap-16">
+
+      <!-- ITEM -->
+      <div class="relative flex flex-col md:flex-row md:items-center" data-aos="fade-up">
+        <!-- Punto -->
+        <div class="hidden sm:block absolute left-[1.25rem] md:left-1/2 md:transform md:-translate-x-1/2 w-4 h-4 bg-purple-400 rounded-full z-10"></div>
+
+        
+        <!-- Contenido -->
+        <div class="md:w-1/2 md:pr-8 md:text-right hidden md:block"></div>
+        <div class="md:w-1/2 md:pl-8 w-full md:text-left text-left sm:pl-10">
+          <div class="bg-[#2b254b] border border-purple-500/40 rounded-xl p-5 shadow-md">
+            <h3 class="text-white font-bold text-lg">Desarrollo de Aplicaciones Web – IES SAN ANDRÉS</h3>
+            <p class="text-sm text-gray-300">Ciclo Formativo de Grado Superior, Informática</p>
+            <p class="text-xs text-purple-400 mt-1">Sept. 2022 – May. 2025</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ITEM -->
+      <div class="relative flex flex-col md:flex-row md:items-center" data-aos="fade-up">
+        <!-- Punto -->
+        <div class="hidden sm:block absolute left-[1.25rem] md:left-1/2 md:transform md:-translate-x-1/2 w-4 h-4 bg-purple-400 rounded-full z-10"></div>
+
+        <!-- Contenido -->
+        <div class="md:w-1/2 md:pr-8 md:text-right w-full md:order-1 hidden md:block">
+          <div class="bg-[#2b254b] border border-purple-500/40 rounded-xl p-5 shadow-md">
+            <h3 class="text-white font-bold text-lg">Aprendiz en prácticas – Serbatic</h3>
+            <p class="text-sm text-gray-300">Investigación y estrategia. Zamora, España.</p>
+            <p class="text-xs text-purple-400 mt-1">Feb. 2025 – May. 2025</p>
+          </div>
+        </div>
+        <div class="md:w-1/2 md:pl-8 w-full md:text-left text-left sm:pl-10 md:hidden">
+          <div class="bg-[#2b254b] border border-purple-500/40 rounded-xl p-5 shadow-md">
+            <h3 class="text-white font-bold text-lg">Aprendiz en prácticas – Serbatic</h3>
+            <p class="text-sm text-gray-300">Investigación y estrategia. Zamora, España.</p>
+            <p class="text-xs text-purple-400 mt-1">Feb. 2025 – May. 2025</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ITEM -->
+      <div class="relative flex flex-col md:flex-row md:items-center" data-aos="fade-up">
+        <!-- Punto -->
+        <div class="hidden sm:block absolute left-[1.25rem] md:left-1/2 md:transform md:-translate-x-1/2 w-4 h-4 bg-purple-400 rounded-full z-10"></div>
+
+        <!-- Contenido -->
+        <div class="md:w-1/2 md:pr-8 md:text-right hidden md:block"></div>
+        <div class="md:w-1/2 md:pl-8 w-full text-left sm:pl-10">
+          <div class="bg-[#2b254b] border border-purple-500/40 rounded-xl p-5 shadow-md">
+            <h3 class="text-white font-bold text-lg">Monitor de tiempo libre – Veintytress</h3>
+            <p class="text-sm text-gray-300">Coordinación en San Cristóbal de Entreviñas.</p>
+            <p class="text-xs text-purple-400 mt-1">Jul. 2024 – Ago. 2024</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ITEM -->
+      <div class="relative flex flex-col md:flex-row md:items-center" data-aos="fade-up">
+        <!-- Punto -->
+        <div class="hidden sm:block absolute left-[1.25rem] md:left-1/2 md:transform md:-translate-x-1/2 w-4 h-4 bg-purple-400 rounded-full z-10"></div>
+
+        <!-- Contenido -->
+        <div class="md:w-1/2 md:pr-8 md:text-right w-full md:order-1 hidden md:block">
+          <div class="bg-[#2b254b] border border-purple-500/40 rounded-xl p-5 shadow-md">
+            <h3 class="text-white font-bold text-lg">Monitor de tiempo libre – Educo</h3>
+            <p class="text-sm text-gray-300">Actividades educativas y recreativas.</p>
+            <p class="text-xs text-purple-400 mt-1">Jul. 2023 – Ago. 2023</p>
+          </div>
+        </div>
+        <div class="md:w-1/2 md:pl-8 w-full text-left sm:pl-10 md:hidden">
+          <div class="bg-[#2b254b] border border-purple-500/40 rounded-xl p-5 shadow-md">
+            <h3 class="text-white font-bold text-lg">Monitor de tiempo libre – Educo</h3>
+            <p class="text-sm text-gray-300">Actividades educativas y recreativas.</p>
+            <p class="text-xs text-purple-400 mt-1">Jul. 2023 – Ago. 2023</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ITEM -->
+      <div class="relative flex flex-col md:flex-row md:items-center" data-aos="fade-up">
+        <!-- Punto -->
+        <div class="hidden sm:block absolute left-[1.25rem] md:left-1/2 md:transform md:-translate-x-1/2 w-4 h-4 bg-purple-400 rounded-full z-10"></div>
+
+        <!-- Contenido -->
+        <div class="md:w-1/2 md:pr-8 md:text-right hidden md:block"></div>
+        <div class="md:w-1/2 md:pl-8 w-full text-left sm:pl-10">
+          <div class="bg-[#2b254b] border border-purple-500/40 rounded-xl p-5 shadow-md">
+            <h3 class="text-white font-bold text-lg">Instalación y mantenimiento – Empleo JCYL</h3>
+            <p class="text-sm text-gray-300">Jardinería urbana en Castilla y León.</p>
+            <p class="text-xs text-purple-400 mt-1">Nov. 2021 – May. 2022</p>
+          </div>
+        </div>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- LÍNEA SEPARADORA -->
   <div class="w-full flex justify-center my-8">
@@ -212,6 +304,7 @@
     </div>
   </section>
 
+  
   <!-- SCRIPTS -->
   <script>
     lucide.createIcons();
@@ -283,6 +376,41 @@
       arrow.classList.toggle("rotate-180");
       text.textContent = isHidden ? "Conocer menos" : "Conocer más";
     }
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+      new TypeIt("#typing-text", {
+        speed: 50,
+        loop: true,
+        breakLines: false,
+        deleteSpeed: 30,
+        nextStringDelay: 1500,
+        waitUntilVisible: true
+      })
+      .type("Dedicado a crear experiencias digitales atractivas.")
+      .pause(1000)
+      .delete()
+      .type("Funcionales y accesibles.")
+      .pause(1000)
+      .delete()
+      .type("Rápidas y optimizadas para SEO.")
+      .pause(1000)
+      .delete()
+      .type("Diseñadas para todos los dispositivos.")
+      .pause(1000)
+      .delete()
+      .type("Con amor por el código limpio ❤️")
+      .pause(1000)
+      .delete()
+      .go();
+    });
+
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true,
+    });
+
   </script>
 </body>
 </html>
