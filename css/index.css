@@ -1,54 +1,44 @@
-/* Fondo animado con solución para móviles usando ::before */
-body {
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    color: white;
-    font-family: sans-serif;
-    position: relative;
-    overflow-x: hidden;
-}
-
-/* Pseudo-elemento para fondo animado */
+/* Fondo animado sin background-attachment */
 body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background:
-        radial-gradient(circle, rgba(255, 255, 255, 0.082) 1px, transparent 0) 0 0 / 20px 20px repeat,
-        linear-gradient(180deg, #1a103d 0%, #030612 100%);
-    animation: moveDots 40s linear infinite;
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(circle, rgba(255, 255, 255, 0.082) 1px, transparent 0) 0 0 / 20px 20px repeat,
+    linear-gradient(180deg, #1a103d 0%, #030612 100%);
+  animation: moveDots 40s linear infinite;
 }
 
-/* Keyframes para la animación del fondo */
-@keyframes moveDots {
-    0% {
-        background-position: 0 0, 0 0;
-    }
-    100% {
-        background-position: 100px 100px, 0 0;
-    }
+/* Estilos generales */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100dvh; /* ← clave para evitar el espacio blanco */
+  color: white;
+  font-family: sans-serif;
+  position: relative;
+  overflow-x: hidden;
 }
 
-/* html base */
+/* Asegura que html se ajuste bien */
 html {
-    scroll-behavior: auto;
-    min-height: 100vh;
+  scroll-behavior: auto;
+  min-height: 100dvh;
+}
+
+/* Animación del fondo */
+@keyframes moveDots {
+  0% {
+    background-position: 0 0, 0 0;
+  }
+  100% {
+    background-position: 100px 100px, 0 0;
+  }
 }
 
 /* Selección de texto */
 ::selection {
-    background: #6366f1;
-    color: white;
-}
-
-/* Opcional: Reset para evitar márgenes/paddings inesperados */
-*, *::before, *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  background: #6366f1;
+  color: white;
 }
